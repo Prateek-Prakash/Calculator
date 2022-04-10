@@ -50,24 +50,28 @@ class _CalculatorState extends State<Calculator> {
                   flex: 1,
                   backgroundColor: Colors.blue.shade100,
                   foregroundColor: Colors.grey.shade900,
+                  type: KeyType.function,
                 ),
                 CalcKey(
                   value: '±',
                   flex: 1,
                   backgroundColor: Colors.blue.shade100,
                   foregroundColor: Colors.grey.shade900,
+                  type: KeyType.function,
                 ),
                 CalcKey(
                   value: '%',
                   flex: 1,
                   backgroundColor: Colors.blue.shade100,
                   foregroundColor: Colors.grey.shade900,
+                  type: KeyType.function,
                 ),
                 const CalcKey(
                   value: 'D',
                   flex: 1,
                   backgroundColor: Colors.red,
                   foregroundColor: Colors.white,
+                  type: KeyType.function,
                 ),
               ],
             ),
@@ -78,24 +82,28 @@ class _CalculatorState extends State<Calculator> {
                   flex: 1,
                   backgroundColor: Colors.white,
                   foregroundColor: Colors.grey.shade900,
+                  type: KeyType.input,
                 ),
                 CalcKey(
                   value: '8',
                   flex: 1,
                   backgroundColor: Colors.white,
                   foregroundColor: Colors.grey.shade900,
+                  type: KeyType.input,
                 ),
                 CalcKey(
                   value: '9',
                   flex: 1,
                   backgroundColor: Colors.white,
                   foregroundColor: Colors.grey.shade900,
+                  type: KeyType.input,
                 ),
                 const CalcKey(
                   value: '÷',
                   flex: 1,
                   backgroundColor: Colors.blue,
                   foregroundColor: Colors.white,
+                  type: KeyType.operator,
                 ),
               ],
             ),
@@ -106,24 +114,28 @@ class _CalculatorState extends State<Calculator> {
                   flex: 1,
                   backgroundColor: Colors.white,
                   foregroundColor: Colors.grey.shade900,
+                  type: KeyType.input,
                 ),
                 CalcKey(
                   value: '5',
                   flex: 1,
                   backgroundColor: Colors.white,
                   foregroundColor: Colors.grey.shade900,
+                  type: KeyType.input,
                 ),
                 CalcKey(
                   value: '6',
                   flex: 1,
                   backgroundColor: Colors.white,
                   foregroundColor: Colors.grey.shade900,
+                  type: KeyType.input,
                 ),
                 const CalcKey(
                   value: 'x',
                   flex: 1,
                   backgroundColor: Colors.blue,
                   foregroundColor: Colors.white,
+                  type: KeyType.operator,
                 ),
               ],
             ),
@@ -134,24 +146,28 @@ class _CalculatorState extends State<Calculator> {
                   flex: 1,
                   backgroundColor: Colors.white,
                   foregroundColor: Colors.grey.shade900,
+                  type: KeyType.input,
                 ),
                 CalcKey(
                   value: '2',
                   flex: 1,
                   backgroundColor: Colors.white,
                   foregroundColor: Colors.grey.shade900,
+                  type: KeyType.input,
                 ),
                 CalcKey(
                   value: '3',
                   flex: 1,
                   backgroundColor: Colors.white,
                   foregroundColor: Colors.grey.shade900,
+                  type: KeyType.input,
                 ),
                 const CalcKey(
                   value: '–',
                   flex: 1,
                   backgroundColor: Colors.blue,
                   foregroundColor: Colors.white,
+                  type: KeyType.operator,
                 ),
               ],
             ),
@@ -162,24 +178,28 @@ class _CalculatorState extends State<Calculator> {
                   flex: 1,
                   backgroundColor: Colors.white,
                   foregroundColor: Colors.grey.shade900,
+                  type: KeyType.input,
                 ),
                 CalcKey(
                   value: '•',
                   flex: 1,
                   backgroundColor: Colors.white,
                   foregroundColor: Colors.grey.shade900,
+                  type: KeyType.input
                 ),
                 const CalcKey(
                   value: '=',
                   flex: 1,
                   backgroundColor: Colors.orange,
                   foregroundColor: Colors.white,
+                  type: KeyType.function,
                 ),
                 const CalcKey(
                   value: '+',
                   flex: 1,
                   backgroundColor: Colors.blue,
                   foregroundColor: Colors.white,
+                  type: KeyType.operator,
                 ),
               ],
             ),
@@ -190,6 +210,12 @@ class _CalculatorState extends State<Calculator> {
   }
 }
 
+enum KeyType {
+  input,
+  operator,
+  function
+}
+
 class CalcKey extends StatelessWidget {
   const CalcKey({
     Key? key,
@@ -197,12 +223,14 @@ class CalcKey extends StatelessWidget {
     required this.flex,
     required this.backgroundColor,
     required this.foregroundColor,
+    required this.type,
   }) : super(key: key);
 
   final String value;
   final int flex;
   final Color backgroundColor;
   final Color foregroundColor;
+  final KeyType type;
 
   @override
   Widget build(BuildContext context) {
