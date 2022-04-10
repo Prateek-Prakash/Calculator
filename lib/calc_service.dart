@@ -16,13 +16,25 @@ class CalcService {
   String calculate() {
     switch (o) {
       case "+":
-        return add(a!, b!).toString();
+        double result = add(a!, b!);
+        a = result;
+        o = b = null;
+        return result.toString();
       case "–":
-        return subtract(a!, b!).toString();
+        double result = subtract(a!, b!);
+        a = result;
+        o = b = null;
+        return result.toString();
       case "x":
-        return multiply(a!, b!).toString();
+        double result = multiply(a!, b!);
+        a = result;
+        o = b = null;
+        return result.toString();
       case "÷":
-        return divide(a!, b!).toString();
+        double result = divide(a!, b!);
+        a = result;
+        o = b = null;
+        return result.toString();
       default:
         return "Unsupported Operation";
     }

@@ -8,6 +8,9 @@ void main() {
     CalcService().b = 5;
     String result = CalcService().calculate();
     expect(result, "10.0");
+    expect(CalcService().a, 10);
+    expect(CalcService().o, null);
+    expect(CalcService().b, null);
   });
 
   test('Calculate Subtract Operation', () {
@@ -16,6 +19,9 @@ void main() {
     CalcService().b = 10;
     String result = CalcService().calculate();
     expect(result, "-5.0");
+    expect(CalcService().a, -5);
+    expect(CalcService().o, null);
+    expect(CalcService().b, null);
   });
 
   test('Calculate Multiply Operation', () {
@@ -24,6 +30,9 @@ void main() {
     CalcService().b = 5;
     String result = CalcService().calculate();
     expect(result, "25.0");
+    expect(CalcService().a, 25);
+    expect(CalcService().o, null);
+    expect(CalcService().b, null);
   });
 
   test('Calculate Divide Operation', () {
@@ -32,6 +41,9 @@ void main() {
     CalcService().b = 5;
     String result = CalcService().calculate();
     expect(result, "2.0");
+    expect(CalcService().a, 2);
+    expect(CalcService().o, null);
+    expect(CalcService().b, null);
   });
 
   test('Add Numbers Method', () {
