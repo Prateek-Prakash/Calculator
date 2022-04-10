@@ -2,10 +2,6 @@ import 'package:calculator/calc_service.dart';
 import 'package:test/test.dart';
 
 void main() {
-  test('Ensure CalcService Input Starts With Zero', () {
-    expect(CalcService().i, "0");
-  });
-
   test('Calculate Add Operation', () {
     CalcService().a = 5;
     CalcService().o = "+";
