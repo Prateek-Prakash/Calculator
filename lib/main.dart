@@ -1,7 +1,17 @@
+import 'package:calculator/views/app_shell_view.dart';
+import 'package:calculator/vms/app_shell_vm.dart';
 import 'package:flutter/material.dart';
 import 'package:calculator/widgets/calc_key.dart';
+import 'package:get_it/get_it.dart';
+
+final getIt = GetIt.instance;
+void setupGetIt() {
+  getIt.registerSingleton(AppShellVM());
+}
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  setupGetIt();
   runApp(const Application());
 }
 
@@ -21,192 +31,7 @@ class Application extends StatelessWidget {
         cardColor: const Color(0xFF262A34),
         dialogBackgroundColor: const Color(0xFF262A34),
       ),
-      home: const Calculator(),
-    );
-  }
-}
-
-class Calculator extends StatefulWidget {
-  const Calculator({Key? key}) : super(key: key);
-
-  @override
-  State<Calculator> createState() => _CalculatorState();
-}
-
-class _CalculatorState extends State<Calculator> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Calculator"),
-      ),
-      body: Container(
-        padding: const EdgeInsets.all(5),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                CalcKey(
-                  value: 'C',
-                  flex: 1,
-                  backgroundColor: Colors.blue.shade100,
-                  foregroundColor: Colors.grey.shade900,
-                  type: KeyType.function,
-                ),
-                CalcKey(
-                  value: '±',
-                  flex: 1,
-                  backgroundColor: Colors.blue.shade100,
-                  foregroundColor: Colors.grey.shade900,
-                  type: KeyType.function,
-                ),
-                CalcKey(
-                  value: '%',
-                  flex: 1,
-                  backgroundColor: Colors.blue.shade100,
-                  foregroundColor: Colors.grey.shade900,
-                  type: KeyType.function,
-                ),
-                const CalcKey(
-                  value: 'D',
-                  flex: 1,
-                  backgroundColor: Colors.red,
-                  foregroundColor: Colors.white,
-                  type: KeyType.function,
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                CalcKey(
-                  value: '7',
-                  flex: 1,
-                  backgroundColor: Colors.white,
-                  foregroundColor: Colors.grey.shade900,
-                  type: KeyType.input,
-                ),
-                CalcKey(
-                  value: '8',
-                  flex: 1,
-                  backgroundColor: Colors.white,
-                  foregroundColor: Colors.grey.shade900,
-                  type: KeyType.input,
-                ),
-                CalcKey(
-                  value: '9',
-                  flex: 1,
-                  backgroundColor: Colors.white,
-                  foregroundColor: Colors.grey.shade900,
-                  type: KeyType.input,
-                ),
-                const CalcKey(
-                  value: '÷',
-                  flex: 1,
-                  backgroundColor: Colors.blue,
-                  foregroundColor: Colors.white,
-                  type: KeyType.operator,
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                CalcKey(
-                  value: '4',
-                  flex: 1,
-                  backgroundColor: Colors.white,
-                  foregroundColor: Colors.grey.shade900,
-                  type: KeyType.input,
-                ),
-                CalcKey(
-                  value: '5',
-                  flex: 1,
-                  backgroundColor: Colors.white,
-                  foregroundColor: Colors.grey.shade900,
-                  type: KeyType.input,
-                ),
-                CalcKey(
-                  value: '6',
-                  flex: 1,
-                  backgroundColor: Colors.white,
-                  foregroundColor: Colors.grey.shade900,
-                  type: KeyType.input,
-                ),
-                const CalcKey(
-                  value: 'x',
-                  flex: 1,
-                  backgroundColor: Colors.blue,
-                  foregroundColor: Colors.white,
-                  type: KeyType.operator,
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                CalcKey(
-                  value: '1',
-                  flex: 1,
-                  backgroundColor: Colors.white,
-                  foregroundColor: Colors.grey.shade900,
-                  type: KeyType.input,
-                ),
-                CalcKey(
-                  value: '2',
-                  flex: 1,
-                  backgroundColor: Colors.white,
-                  foregroundColor: Colors.grey.shade900,
-                  type: KeyType.input,
-                ),
-                CalcKey(
-                  value: '3',
-                  flex: 1,
-                  backgroundColor: Colors.white,
-                  foregroundColor: Colors.grey.shade900,
-                  type: KeyType.input,
-                ),
-                const CalcKey(
-                  value: '–',
-                  flex: 1,
-                  backgroundColor: Colors.blue,
-                  foregroundColor: Colors.white,
-                  type: KeyType.operator,
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                CalcKey(
-                  value: '0',
-                  flex: 1,
-                  backgroundColor: Colors.white,
-                  foregroundColor: Colors.grey.shade900,
-                  type: KeyType.input,
-                ),
-                CalcKey(
-                  value: '•',
-                  flex: 1,
-                  backgroundColor: Colors.white,
-                  foregroundColor: Colors.grey.shade900,
-                  type: KeyType.input
-                ),
-                const CalcKey(
-                  value: '=',
-                  flex: 1,
-                  backgroundColor: Colors.orange,
-                  foregroundColor: Colors.white,
-                  type: KeyType.function,
-                ),
-                const CalcKey(
-                  value: '+',
-                  flex: 1,
-                  backgroundColor: Colors.blue,
-                  foregroundColor: Colors.white,
-                  type: KeyType.operator,
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
+      home: const AppShellView(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get_it_hooks/get_it_hooks.dart';
 
 enum KeyType {
   input,
@@ -6,7 +7,7 @@ enum KeyType {
   function
 }
 
-class CalcKey extends StatelessWidget {
+class CalcKey extends HookWidget {
   const CalcKey({
     Key? key,
     required this.value,
