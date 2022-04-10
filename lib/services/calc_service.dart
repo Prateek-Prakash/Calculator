@@ -19,28 +19,28 @@ class CalcService {
 
   String calculate() {
     switch (o) {
-      case "+":
+      case '+':
         double result = add(a!, b!);
         a = result;
         o = b = null;
         return result.toString();
-      case "–":
+      case '–':
         double result = subtract(a!, b!);
         a = result;
         o = b = null;
         return result.toString();
-      case "x":
+      case 'x':
         double result = multiply(a!, b!);
         a = result;
         o = b = null;
         return result.toString();
-      case "÷":
+      case '÷':
         double result = divide(a!, b!);
         a = result;
         o = b = null;
         return result.toString();
       default:
-        return "Unsupported Operation";
+        return 'Unsupported Operation';
     }
   }
 
