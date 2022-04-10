@@ -1,3 +1,4 @@
+import 'package:calculator/vms/calculator_vm.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it_hooks/get_it_hooks.dart';
 
@@ -36,10 +37,15 @@ class CalcKey extends HookWidget {
         ),
         child: Text(
           value,
-          style: TextStyle(color: foregroundColor, fontSize: 25, fontWeight: FontWeight.bold),
+          style: TextStyle(
+            color: foregroundColor,
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         onPressed: () {
           print('Key Pressed: $value');
+          useGet<CalculatorVM>().process(value, type);
         },
       ),
     );
