@@ -1,4 +1,3 @@
-import 'package:calculator/main.dart';
 import 'package:calculator/views/calculator_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it_hooks/get_it_hooks.dart';
