@@ -1,5 +1,7 @@
+import 'package:calculator/services/calc_service.dart';
 import 'package:calculator/widgets/calc_key.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it_hooks/get_it_hooks.dart';
 
 class CalculatorVM extends ChangeNotifier {
   String _input = "0";
@@ -31,6 +33,10 @@ class CalculatorVM extends ChangeNotifier {
                 input = input.substring(0, input.length - 1);
               }
             }
+            break;
+          case "C":
+            input = "0";
+            CalcService().clear();
             break;
           default:
             break;
