@@ -38,6 +38,9 @@ class CalculatorVM extends ChangeNotifier {
             input = "0";
             CalcService().clear();
             break;
+          case "%":
+            input = (double.parse(input) / 100.0).toString();
+            break;
           default:
             break;
         }
