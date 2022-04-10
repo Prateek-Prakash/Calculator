@@ -32,7 +32,9 @@ class CalculatorVM extends ChangeNotifier {
             input = (double.parse(input) / 100.0).toString();
             break;
           case '±':
-          input = (double.parse(input) * -1).toString();
+            if (input != '0') {
+              input = (double.parse(input) * -1).toString();
+            }
             break;
           case 'D':
             if (input != '0') {
