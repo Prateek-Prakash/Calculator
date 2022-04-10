@@ -7,6 +7,7 @@ class CalcService {
     return _instance;
   }
 
+  String i = "0";
   double? a;
   String? o;
   double? b;
