@@ -2,6 +2,16 @@ import 'package:calculator/services/calc_service.dart';
 import 'package:test/test.dart';
 
 void main() {
+  test('Clear Variables', () {
+    CalcService().a = 5;
+    CalcService().o = "+";
+    CalcService().b = 5;
+    CalcService().clear();
+    expect(CalcService().a, null);
+    expect(CalcService().o, null);
+    expect(CalcService().b, null);
+  });
+
   test('Calculate Add Operation', () {
     CalcService().a = 5;
     CalcService().o = "+";

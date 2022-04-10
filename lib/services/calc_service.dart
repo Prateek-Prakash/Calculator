@@ -13,6 +13,10 @@ class CalcService {
 
   CalcService._internal();
 
+  void clear() {
+    a = o = b = null;
+  }
+
   String calculate() {
     switch (o) {
       case "+":
