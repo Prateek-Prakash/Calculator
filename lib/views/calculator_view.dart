@@ -1,3 +1,4 @@
+import 'package:calculator/widgets/calc_display.dart';
 import 'package:calculator/widgets/calc_keypad.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it_hooks/get_it_hooks.dart';
@@ -13,6 +14,7 @@ class CalculatorView extends HookWidget {
       ),
       body: Column(
         children: const [
+          CalcDisplay(),
           CalcKeypad(),
         ],
       ),

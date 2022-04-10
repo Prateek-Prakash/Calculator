@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get_it_hooks/get_it_hooks.dart';
 
-enum KeyType {
-  input,
-  operator,
-  function
-}
+enum KeyType { input, operator, function }
 
 class CalcKey extends HookWidget {
   const CalcKey({
@@ -31,6 +27,11 @@ class CalcKey extends HookWidget {
       height: (MediaQuery.of(context).size.width - 10) / 4,
       child: ElevatedButton(
         style: ButtonStyle(
+          shape: MaterialStateProperty.all<OutlinedBorder>(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+          ),
           backgroundColor: MaterialStateProperty.all<Color>(backgroundColor),
         ),
         child: Text(
