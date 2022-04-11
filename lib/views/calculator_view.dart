@@ -12,11 +12,13 @@ class CalculatorView extends HookWidget {
       appBar: AppBar(
         title: const Text("Calculator"),
       ),
-      body: Column(
-        children: const [
-          CalcDisplay(),
-          CalcKeypad(),
-        ],
+      body: SafeArea(
+        child: Column(
+          children: const [
+            CalcDisplay(),
+            CalcKeypad(),
+          ],
+        ),
       ),
     );
   }
