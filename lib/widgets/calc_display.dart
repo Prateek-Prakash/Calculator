@@ -14,7 +14,6 @@ class CalcDisplay extends HookWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
           ),
-          color: const Color(0xFF303952),
           child: Center(
             child: Text(
               useWatchOnly((CalculatorVM calculatorVM) => calculatorVM.input),
