@@ -2,6 +2,7 @@ import 'package:calculator/views/app_shell_view.dart';
 import 'package:calculator/vms/app_shell_vm.dart';
 import 'package:calculator/vms/calculator_vm.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get_it/get_it.dart';
 
 final getIt = GetIt.instance;
@@ -12,6 +13,9 @@ void setupGetIt() {
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]);
   setupGetIt();
   runApp(const Application());
 }
