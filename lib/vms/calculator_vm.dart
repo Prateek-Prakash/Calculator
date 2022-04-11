@@ -14,13 +14,17 @@ class CalculatorVM extends ChangeNotifier {
   void process(String value, KeyType type) {
     switch (type) {
       case KeyType.input:
-        if (input == "0") {
+        if (input == "0" && CalcService().a == null && CalcService().o == null) {
+          input = value;
+        } else if (CalcService().a != null && CalcService().o != null) {
           input = value;
         } else {
           input += value;
         }
         break;
       case KeyType.operator:
+        CalcService().a = double.parse(input);
+        CalcService().o = value;
         break;
       case KeyType.function:
         switch (value) {
@@ -44,6 +48,10 @@ class CalculatorVM extends ChangeNotifier {
                 input = input.substring(0, input.length - 1);
               }
             }
+            break;
+          case '=':
+            CalcService().b = double.parse(input);
+            input = CalcService().calculate();
             break;
           default:
             break;
